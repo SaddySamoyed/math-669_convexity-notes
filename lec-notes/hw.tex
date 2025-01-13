@@ -1,0 +1,62 @@
+\documentclass[lang=cn,11pt]{elegantbook}
+\usepackage[utf8]{inputenc}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}%
+\usepackage{amssymb}%
+\usepackage{graphicx}
+
+\title{Math 669: Topics in con}
+
+\begin{document}
+\frontmatter
+\tableofcontents
+\mainmatter
+
+\chapter{Introduction}
+
+\noindent For vector spaces in this note, it is over $\bR$, with the standard inner product and Euclidean norm when mentioned.
+
+\begin{definition}{interval}
+    Given $x,y \in \bR^n$, we define the interval between $x$ and $y$ as the set 
+    $$
+    [x,y] := \{ \alpha x + (1-\alpha)y \mid 0 \leq \alpha \leq 1  \}
+    $$
+\end{definition}
+
+\begin{definition}{convex set}
+    We say $A \sub V$ is convex if for all $x,y \in A$, we have $[x,y] \sub A$
+\end{definition}
+\pic[0.3]{assets/lec1(1).png}
+
+There are of some trivial convex sets we can easily think about, like cubes and balls. There are also non-trivial convex sets. Below is an example.
+\begin{example}
+\begin{theorem}{Schor-Horn Theorem (I.Schor, 1875-1941， A.Horn, 1918-2001)}
+\label{Schor-Horn Theorem}
+Fix $\lambda_1, \cdots, \lambda_n \in \bR$, consider 
+$$
+E := \{ A \in \Sym(n) \mid A \text{ has } \{\lambda_i\}_{i=1}^n \text{ as eigenvalues} \} \sub \Sym(n)
+$$
+Claim:
+$$
+\{ ((A)_{11}, \cdots, (A)_{nn}) \mid A \in E   \}
+$$
+, the set of diagonals of all matrices in $E$, is convex. And furthermore, it is \textbf{the smallest convex set containing the vectors} $\{ ( \lambda_{\sigma(1)}, \cdots,  \lambda_{\sigma(n))}) \mid \sigma \in S_n  \}$
+\end{theorem}
+\noindent Here we take an example for $n=3$. Note $|S_3| = 3! = 6$. The six points formed by permuting $\lambda_1, \lambda_2, \lambda_3$ form a regular hexagon on a hyperplane, and area between is the set of diagoanls of all matrices in $E$.
+\pic[0.3]{assets/lec1(2).png}
+\begin{proof}
+    Later on.
+\end{proof}
+\end{example}
+
+\begin{example}
+\begin{theorem}{Brickman's Thm, 1961, L.Brickman}\label{Brickman's Thm}
+Let $q_1, q_2: \bR^n \rar \bR$ be quadratic forms.\\
+Define $\phi: S_{n-1} \rar \bR^2$ sending $x \mapsto (q_1(x), q_2(x))$.\\
+Claim: if $n \geq 3$, then $\phi(S^{n-1})$ is convex in $\bR^2$.
+\end{theorem}
+
+
+\end{example}
+
+\end{document}
